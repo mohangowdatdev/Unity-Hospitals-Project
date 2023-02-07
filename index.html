@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unity Hospital | Home</title>
+
+    <!-- Web Fonts -->
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"
+    />
+    <link rel="icon" href="favi.png">
+    <!-- CSS Global Compulsory -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons-pro/styles.css" />
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css" />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/font-awesome/css/font-awesome.min.css"
+    />
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!--=== Header v1 ===-->
+      <div class="header-v1">
+        <!-- End Topbar -->
+
+        <!-- Navbar -->
+        <div class="navbar mega-menu" role="navigation">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="res-container">
+              <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target=".navbar-responsive-collapse"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <div class="navbar-brand">
+                <a href="index.html">
+                  <img src="assets/img/logo/unity_white.jpg" alt="Logo" />
+                </a>
+              </div>
+            </div>
+            <!--/end responsive container-->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+              <div class="res-container">
+                <ul class="nav navbar-nav">
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+
+                  <!-- Home  -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="index.html" target="_blank"> HOME </a>
+                  </li>
+                  <!-- End Home-->
+
+                  <!-- About Us -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="about.html" target="_blank"> ABOUT US </a>
+                  </li>
+                  <!-- End About us -->
+
+                  <!-- Doctors -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="doctors.html" target="_blank"> DOCTORS </a>
+                  </li>
+                  <!-- End Doctors -->
+
+                  <!-- Gallery -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="gallery.html" target="_blank"> GALLERY </a>
+                  </li>
+                  <!-- End Gallery -->
+
+                  <!-- Appointment -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="appointment.html" target="_blank"> BOOK APPOINTMENT </a>
+                  </li>
+                  <!-- End Appointment -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Navbar -->
+
+      <!-- Slider -->
+      <div id="slide">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img
+              src="assets/img/slider/1.jpg"
+              alt="Slider1"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              src="assets/img/slider/2.jpg"
+              alt="Slider2"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              src="assets/img/slider/3.jpg"
+              alt="Slider3"
+              style="width: 100%"
+            />
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+      </div>
+
+      <script>
+        var slideIndex = 0;
+        showSlides();
+        var slides, dots;
+
+        function showSlides() {
+          var i;
+          slides = document.getElementsByClassName("mySlides");
+          dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+          setTimeout(showSlides, 8000); // Change image every 8 seconds
+        }
+
+        function plusSlides(position) {
+          slideIndex += position;
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          } else if (slideIndex < 1) {
+            slideIndex = slides.length;
+          }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+        }
+
+        function currentSlide(index) {
+          if (index > slides.length) {
+            index = 1;
+          } else if (index < 1) {
+            index = slides.length;
+          }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[index - 1].style.display = "block";
+          dots[index - 1].className += " active";
+        }
+      </script>
+
+      <!-- End of Slider -->
+
+      <!--=== Welcome to Unity===-->
+      <div class="container content-md welcomeSection">
+        <div class="row section1">
+          <div
+            class="col-md-6"
+            style="margin-bottom: 40px"
+            style="border:2px solid black background: green;"
+          >
+            <h2 class="title-v2">
+              WELCOME TO <span style="color: #72c02c"> UNITY </span>
+            </h2>
+            <p style="text-align: justify; font-size: 14px">
+              Unity hospitals are a top-tier hospital chain with
+              state-of-the-art healthcare facilities. It has multiple
+              departments namely General medicine, Orthopedics, cardiology, and
+              neuroscience. The management provides best facilities at
+              reasonable prices. It works to achieve the motto of"health is
+              wealth". It has 5000 beds and 800 full-time staff to cater to the
+              needs of the patients. We are the largest hospital chain in India.
+              We are currently in 20 cities and in 4 countries.
+            </p>
+            <br />
+            <a href="about.html" class="btn-u btn-brd btn-brd-hover"
+              >Read More</a
+            >
+          </div>
+          <div class="col-md-6 overflow-h">
+            <img
+              style="border-radius: 50px; margin-left: 30px"
+              src="assets/img/bg/1.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!--=== End About Us ===-->
+
+      <!-- Plans Start -->
+      <section class="pricingSection">
+        <div class="container" style="margin-top: 20px">
+          <div class="headline-center">
+            <h2>Health Packages</h2>
+            <div class="line"></div>
+            <div class="row">
+              <!-- Pricing Item -->
+              <div class="col-md-3 col-xs-6 col-2xs-12">
+                <div
+                  style="border-radius: 10px"
+                  class="pricing-v9 hover-effect"
+                >
+                  <div class="pricing-v9-head">
+                    <h3 class="h3">
+                      <span class="g-color-default">UNITY</span> Basic wellness
+                    </h3>
+                  </div>
+                  <ul style="list-style-type: none">
+                    <li>CBC</li>
+                    <li>Blood Group & RH</li>
+                    <li>Urine (Routine & Micro)</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                  </ul>
+                  <div class="pricing-v9-price">
+                    For <span class="g-color-default">₹1500/-</span>
+                  </div>
+                </div>
+              </div>
+              <!-- /Pricing Item -->
+              <!-- Pricing Item -->
+              <div class="col-md-3 col-xs-6 col-2xs-12">
+                <div
+                  style="border-radius: 10px"
+                  class="pricing-v9 hover-effect"
+                >
+                  <div class="pricing-v9-head">
+                    <h3 class="h3">
+                      <span class="g-color-default">UNITY</span> Gold Wellness
+                    </h3>
+                  </div>
+                  <ul style="list-style-type: none">
+                    <li>CBC</li>
+                    <li>Blood Group & RH</li>
+                    <li>Urine (Routine & Micro)</li>
+                    <li>SGPT</li>
+                    <li>&nbsp;</li>
+                  </ul>
+                  <div class="pricing-v9-price">
+                    For <span class="g-color-default">₹3000/-</span>
+                  </div>
+                </div>
+              </div>
+              <!-- /Pricing Item -->
+              <!-- Pricing Item -->
+              <div class="col-md-3 col-xs-6 col-2xs-12">
+                <div
+                  style="border-radius: 10px"
+                  class="pricing-v9 hover-effect"
+                >
+                  <div class="pricing-v9-head">
+                    <h3 class="h3">
+                      <span class="g-color-default">UNITY</span> Happy Heart
+                    </h3>
+                  </div>
+                  <ul style="list-style-type: none">
+                    <li>Lipid Profile</li>
+                    <li>ECG</li>
+                    <li>Chest X-RAY</li>
+                    <li>FBS</li>
+                    <li>Basic Wellness Included</li>
+                    <li>&nbsp;</li>
+                  </ul>
+                  <div class="pricing-v9-price">
+                    For <span class="g-color-default">₹4500/-</span>
+                  </div>
+                </div>
+              </div>
+              <!-- /Pricing Item -->
+              <!-- Pricing Item -->
+              <div class="col-md-3 col-xs-6 col-2xs-12">
+                <div
+                  style="border-radius: 10px"
+                  class="pricing-v9 hover-effect"
+                >
+                  <div class="pricing-v9-head">
+                    <h3 class="h3">
+                      <span class="g-color-default">UNITY</span> Platinum
+                      Wellness
+                    </h3>
+                  </div>
+                  <ul style="list-style-type: none">
+                    <li>Basic Wellness Plan</li>
+                    <li>Lung Function Tests</li>
+                    <li>USG Abdomen</li>
+                    <li>Thyroid All Tests</li>
+                    <li>Lung Efficiency Tests</li>
+                  </ul>
+                  <div class="pricing-v9-price">
+                    For <span class="g-color-default">₹8000/-</span>
+                  </div>
+                </div>
+              </div>
+              <!-- /Pricing Item -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End PLANS -->
+
+      <!--=== Footer ===-->
+      <div class="footer-v1">
+        <!--/footer-->
+
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  2022 &copy; Project-Hospital website
+                  
+                </p>
+              </div>
+
+              <!-- Social Links -->
+              <div class="col-md-6">
+                <ul class="footer-socials list-inline">
+                  <li>
+                    <a
+                      href="http://www.facebook.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Facebook"
+                    >
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.skype.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Skype"
+                    >
+                      <i class="fa fa-skype"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.googleplus.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Google Plus"
+                    >
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.linkedin.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Linkedin"
+                    >
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.Pinterest.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Pinterest"
+                    >
+                      <i class="fa fa-pinterest"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.twitter.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Twitter"
+                    >
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- End Social Links -->
+            </div>
+          </div>
+        </div>
+        <!--/copyright-->
+      </div>
+      <!--=== End Footer ===-->
+    </div>
+    <!--/wrapper-->
+  </body>
+</html>

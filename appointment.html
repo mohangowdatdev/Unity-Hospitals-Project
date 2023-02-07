@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unity Hospital | Appointment</title>
+
+    <!-- Web Fonts -->
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"
+    />
+    <link rel="icon" href="favi.png">
+    <!-- CSS Global Compulsory -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons-pro/styles.css" />
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css" />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css"
+    />
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!--=== Header v1 ===-->
+      <div class="header-v1">
+        <!-- End Topbar -->
+
+        <!-- Navbar -->
+        <div class="navbar mega-menu" role="navigation">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="res-container">
+              <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target=".navbar-responsive-collapse"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <div class="navbar-brand">
+                <a href="index.html">
+                  <img src="assets/img/logo/unity_white.jpg" alt="Logo" />
+                </a>
+              </div>
+            </div>
+            <!--/end responsive container-->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+              <div class="res-container">
+                <ul class="nav navbar-nav">
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+
+                  <!-- Home  -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="index.html" target="_blank"> HOME </a>
+                  </li>
+                  <!-- End Home-->
+
+                  <!-- About Us -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="about.html" target="_blank"> ABOUT US </a>
+                  </li>
+                  <!-- End About us -->
+
+                  <!-- Doctors -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="doctors.html" target="_blank"> DOCTORS </a>
+                  </li>
+                  <!-- End Doctors -->
+
+                  <!-- Gallery -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="gallery.html" target="_blank"> GALLERY </a>
+                  </li>
+                  <!-- End Gallery -->
+
+                  <!-- Appointment -->
+                  <li class="mega-menu-fullwidth">
+                    <a href="appointment.html" target="_blank"> BOOK APPOINTMENT </a>
+                  </li>
+                  <!-- End Appointment -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Navbar -->
+
+      <!--=== Heading ===-->
+      <div class="container content">
+        <div class="row" style="margin-bottom: 30px">
+          <div class="col-md-9" style="margin-bottom: 30px">
+            <div class="headline"><h2>Appointment Form</h2></div>
+
+            <!--=== APPOINTMENT FORM ===-->
+            <form
+              onsubmit="showMsg(0);return false;"
+              method="post"
+              class="sky-form sky-changes-3"
+            >
+              <fieldset>
+                <div class="row">
+                  <section class="col col-6">
+                    <label class="label">Name</label>
+                    <label class="input">
+                      <i class="icon-append fa fa-user"></i>
+                      <input type="text" name="name" id="name" required="" />
+                    </label>
+                  </section>
+                  <section class="col col-6">
+                    <label class="label">E-mail</label>
+                    <label class="input">
+                      <i class="icon-append fa fa-envelope-o"></i>
+                      <input type="email" name="email" id="email" required="" />
+                    </label>
+                  </section>
+                </div>
+
+                <section>
+                  <label class="label">Purpose Of Appointment</label>
+                  <label class="input">
+                    <i class="icon-append fa fa-tag"></i>
+                    <input type="text" name="subject" required="" />
+                  </label>
+                </section>
+
+                <section>
+                  <label class="label">Mobile Number</label>
+                  <label class="input">
+                    <i class="icon-append fa fa-phone"></i>
+                    <input type="text" name="number" id="number" required="" />
+                  </label>
+                </section>
+
+                <section>
+                  <label class="select">
+                    <select name="Department" required="">
+                      <option value="" selected="" disabled="">
+                        Select Department
+                      </option>
+                      <option>Cardiology</option>
+                      <option>Dermatology and Cosmetology</option>
+                      <option>General Surgery</option>
+                      <option>Health Checkup Packages</option>
+                      <option>Neurology</option>
+                    </select>
+                    <i></i>
+                  </label>
+                </section>
+                <div class="row">
+                  <section class="col col-6">
+                    <label class="date">Select Date</label>
+                    <label class="input">
+                      <i class="icon-append fa fa-calendar"></i>
+                      <input type="date" required="" />
+                    </label>
+                  </section>
+                  <section class="col col-6">
+                    <label class="time">Select Time</label>
+                    <label class="select">
+                      <select name="Time" required="">
+                        <option value="" selected="" disabled="">
+                          Select Time
+                        </option>
+                        <option>8 AM - 10 AM</option>
+                        <option>10 AM - 12 PM</option>
+                        <option>12 PM - 2 PM</option>
+                        <option>2 PM - 4 PM</option>
+                        <option>4 PM - 6 PM</option>
+                        <option>6 PM - 8 PM</option>
+                        <option>8 PM - 10 PM</option>
+                      </select>
+                      <i></i>
+                    </label>
+                  </section>
+                </div>
+                <div class="alert alert-success successBox">
+                  <button type="button" class="close" onclick="showMsg(1);">
+                    ×
+                  </button>
+                  <strong style="font-size: 16px">Congratulations!</strong
+                  ><span class="alert-link">
+                    Your Appointment has been booked successfully.</span
+                  >
+                </div>
+              </fieldset>
+
+              <footer>
+                <button type="submit" class="btn-u">Send message</button>
+              </footer>
+            </form>
+          </div>
+          <!--/col-md-9-->
+
+          <!--/col-md-3-->
+        </div>
+        <!--/row-->
+      </div>
+      <!--/container-->
+
+      <!--=== Footer ===-->
+      <div class="footer-v1">
+        <!--/footer-->
+
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  2022 &copy; Project-Hospital website
+                  
+                </p>
+              </div>
+
+              <!-- Social Links -->
+              <div class="col-md-6">
+                <ul class="footer-socials list-inline">
+                  <li>
+                    <a
+                      href="http://www.facebook.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Facebook"
+                    >
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.skype.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Skype"
+                    >
+                      <i class="fa fa-skype"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.googleplus.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Google Plus"
+                    >
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.linkedin.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Linkedin"
+                    >
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.Pinterest.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Pinterest"
+                    >
+                      <i class="fa fa-pinterest"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.twitter.com"
+                      class="tooltips"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title=""
+                      data-original-title="Twitter"
+                    >
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- End Social Links -->
+            </div>
+          </div>
+        </div>
+        <!--/copyright-->
+      </div>
+      <!--=== End Footer ===-->
+    </div>
+    <!--/wrapper-->
+
+    <!-- Java scripts -->
+    <script
+      type="text/javascript"
+      src="assets/plugins/jquery/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      function showMsg(flag) {
+        if (flag == 0) {
+          $(".successBox").css("display", "block");
+        } else {
+          $(".successBox").css("display", "none");
+        }
+      }
+    </script>
+  </body>
+</html>
